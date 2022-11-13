@@ -10,8 +10,7 @@ function App() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
   const [total, setTotal] = useState(0);
-
-  const options = ["good", "neutral", "bad"];
+  
   let showStatistics = false;
 
   if (total > 0) {
@@ -47,7 +46,9 @@ function App() {
     <div>
       <Section title="Please leave feedback">
         <Controls
-          options={options}
+          good={good}
+          neutral={neutral}
+          bad={bad}
           onLeaveFeedback={onLeaveFeedback}
         />
       </Section>

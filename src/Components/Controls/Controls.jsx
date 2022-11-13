@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
 
-export const Controls = ({ good, neutral, bad, onLeaveFeedback }) => {
-  // console.log(options);
-  const options = [good, neutral, bad]
+export const Controls = ({ options, onLeaveFeedback }) => {
   return (
     <div>
       {options.map((elem) => {

@@ -10,8 +10,9 @@ function App() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
   const [total, setTotal] = useState(0);
-  
+
   let showStatistics = false;
+  const options = ['good', 'neutral', 'bad']
 
   if (total > 0) {
     showStatistics = true;
@@ -31,14 +32,18 @@ function App() {
   const onLeaveFeedback = (event) => {
     let name = event.target.name;
 
-    if (name === "good") {
-      setGood(good + 1);
-    }
-    if (name === "neutral") {
-      setNeutral(neutral + 1);
-    }
-    if (name === "bad") {
-      setBad(bad + 1);
+    switch (name) {
+      case "good":
+        setGood(good + 1);
+        break;
+      case "neutral":
+        setNeutral(neutral + 1);
+        break;
+      case "bad":
+        setBad(bad + 1);
+        break;
+      default:
+        return;
     }
   };
 
@@ -46,9 +51,7 @@ function App() {
     <div>
       <Section title="Please leave feedback">
         <Controls
-          good={good}
-          neutral={neutral}
-          bad={bad}
+          options={options}
           onLeaveFeedback={onLeaveFeedback}
         />
       </Section>

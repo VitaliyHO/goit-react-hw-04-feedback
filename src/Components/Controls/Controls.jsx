@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import "./Controls.css";
 
 export const Controls = ({ good, neutral, bad, onLeaveFeedback }) => {
   // console.log(options);
